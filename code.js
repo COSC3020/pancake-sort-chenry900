@@ -21,8 +21,10 @@ function pancakeSort(array) {
     while(largest != smallest)
         for(i = 0; i < size; i++)
             if(largest < array[i])
+            {
                 largest = array[i];
                 swap = i;
+            }
         flip(array, (swap + 1));
         size = size-1;
     return array;
