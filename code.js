@@ -14,18 +14,22 @@ function pancakeSort(array) {
     var largest = array[0], smallest = array[0], size = array.length();
     var swap = 0;
     for(i = 0; i < array.length(); i++)
-        if(largest < array[i])
-            largest = array[i];
-        if(smallest > array[i])
-            smallest = array[i];
-    while(largest != smallest)
-        for(i = 0; i < size; i++)
+        {
             if(largest < array[i])
-            {
                 largest = array[i];
-                swap = i;
-            }
-        flip(array, (swap + 1));
-        size = size-1;
+            if(smallest > array[i])
+                smallest = array[i];
+        }
+    while(largest != smallest)
+        {
+            for(i = 0; i < size; i++)
+                if(largest < array[i])
+                {
+                    largest = array[i];
+                    swap = i;
+                }
+            flip(array, (swap + 1));
+            size = size-1;
+        }
     return array;
 }
