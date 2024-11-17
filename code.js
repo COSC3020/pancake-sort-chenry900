@@ -1,5 +1,5 @@
 function flip(array, n) {
-    var[n] change;
+    change = new int[n[;
     var c = n - 1;
     for (i = 0; i < n; i++)
         change[c] = array[i];
