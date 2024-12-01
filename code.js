@@ -1,35 +1,29 @@
 function flip(array, n) {
-    change = new int[n];
+    var change = new Array(n);
     var c = n - 1;
-    for (i = 0; i < n; i++)
+    for (var i = 0; i < n; i++) {
         change[c] = array[i];
         c = c - 1;
-    for (i = 0; i < n; i++)
+    }
+    for (var i = 0; i < n; i++) {
         array[i] = change[i];
+    }
     return array;
 }
 
 // Use only flip() here to manipulate the array
 function pancakeSort(array) {
-    var largest = array[0], smallest = array[0], size = array.length();
-    var swap = 0;
-    for(i = 0; i < array.length(); i++)
+    var largest = 0, size = array.length;
+    for(var i = size; i > 1; i--)
         {
-            if(largest < array[i])
-                largest = array[i];
-            if(smallest > array[i])
-                smallest = array[i];
-        }
-    while(largest != smallest)
-        {
-            for(i = 0; i < size; i++)
-                if(largest < array[i])
-                {
-                    largest = array[i];
-                    swap = i;
-                }
-            flip(array, (swap + 1));
-            size = size-1;
+            largest = 0;
+            for (var b = 1; b < i; b++) {
+                if(array[largest] < array[b])
+                    largest = b;
+            }
+            if (largest != 0)
+                flip(array, largest +1);
+            flip(array, i);
         }
     return array;
 }
