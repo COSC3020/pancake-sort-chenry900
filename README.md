@@ -29,3 +29,6 @@ What is the asymptotic runtime ($\Theta$) of your algorithm in terms of the
 number of comparisons? What is it in terms of the number of flips? Add your
 answer to this markdown file.
 
+The pancake sort has a double for loop so n^2, add onto it the two recursive calls to flip the array then flip it back and thats 2T(2n) that are in the first for loop so its 2nT(2n). so the runtime would be O(n^2).
+
+"I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice."
